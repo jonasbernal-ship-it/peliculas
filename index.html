@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Catálogo de Películas</title>
+    
+    <style>
+        /* === RESET Y CONFIGURACIÓN MÓVIL === */
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            background-color: #121212;
+            color: #f1f1f1;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.5;
+            padding: 15px;
+        }
+
+        /* === ENCABEZADO Y MENÚ CORREGIDO (ESPACIADO) === */
+        header {
+            background-color: #1f1f1f;
+            padding: 12px 10px;
+            display: flex;
+            justify-content: space-around; /* Reparte los elementos uniformemente */
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 10px;
+            border-radius: 8px;
+            margin-bottom: 25px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+            position: sticky;
+            top: 10px;
+            z-index: 100;
+        }
+
+        header a {
+            text-decoration: none;
+            color: #bbb;
+            font-weight: 600;
+            text-transform: uppercase;
+            font-size: 0.8rem;
+            padding: 5px 8px;
+            border-radius: 4px;
+            transition: all 0.3s ease;
+        }
+
+        header a:hover {
+            color: #fff;
+            background-color: #e50914;
+        }
+
+        h1 {
+            text-align: center;
+            color: #e50914;
+            font-size: 2rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 15px;
+        }
+
+        /* === CONTENEDOR GRID RESPONSIVO PARA MÓVIL === */
+        main {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        /* Títulos de cada categoría */
+        .categoria-section {
+            margin-top: 10px;
+            border-bottom: 2px solid #333;
+            padding-bottom: 5px;
+        }
+
+        h2 {
+            color: #ffa500;
+            font-size: 1.3rem;
+            text-transform: uppercase;
+        }
+
+        /* Tarjetas de películas optimizadas para celular */
+        .terror, .accion, .comedia, .romance {
+            background-color: #1e1e1e;
+            border: 1px solid #333;
+            border-radius: 10px;
+            padding: 15px;
+            text-align: center;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.4);
+            display: flex;
+            flex-direction: column;
+        }
+
+        h3 {
+            font-size: 1.1rem;
+            margin-bottom: 12px;
+            color: #fff;
+        }
+
+        /* IMÁGENES: Ajuste perfecto para evitar pixelados y deformaciones */
+        .terror img, .accion img, .comedia img, .romance img {
+            width: 100%;
+            max-height: 380px;
+            object-fit: contain;
+            background-color: #000;
+            border-radius: 6px;
+            margin-bottom: 12px;
+        }
+
+        p {
+            font-size: 0.9rem;
+            color: #ccc;
+            margin-bottom: 15px;
+        }
+
+        /* === BOTONES TÁCTILES === */
+        .botones-container {
+            display: flex;
+            gap: 10px;
+            justify-content: center;
+            margin-top: auto;
+        }
+
+        input[type="button"] {
+            background-color: #333;
+            color: white;
+            border: none;
+            padding: 12px 10px;
+            border-radius: 6px;
+            cursor: pointer;
+            font-weight: 600;
+            font-size: 0.85rem;
+            flex: 1;
+            transition: background-color 0.3s ease;
+        }
+
+        input[type="button"]:active {
+            background-color: #e50914;
+        }
+
+        /* === PIE DE PÁGINA === */
+        footer {
+            text-align: center;
+            margin-top: 40px;
+            padding: 15px;
+            border-top: 1px solid #333;
+            color: #777;
+        }
+
+        footer h3 {
+            font-size: 0.85rem;
+            font-weight: normal;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>Películas</h1>
+
+    <header>
+        <a href="#terror">Terror</a>
+        <a href="#accion">Acción</a>
+        <a href="#comedia">Comedia</a>
+        <a href="#romance">Romance</a>
+    </header>
+
+    <main>
+        <!-- TERROR -->
+        <div class="categoria-section">
+            <h2 id="terror">Tráiler de terror</h2>
+        </div>
+        <div class="terror">
+            <h3>Evil Dead</h3>
+            <a href="https://www.youtube.com/watch?t=8&v=Gy62h4T78X4" target="_blank">
+                <img src="terror.jpg" alt="Evil Dead">
+            <p>Película de terror de posesión de almas. ¡Haz clic para ver el tráiler!</p>
+            <div class="botones-container">
+                <input type="button" value="Ver reseña">
+                <input type="button" value="Comprar">
+            </div>
+        </div>
+
+        <!-- ACCIÓN -->
+        <div class="categoria-section">
+            <h2 id="accion">Tráiler de acción</h2>
+        </div>
+        <div class="accion">
+            <h3>Búsqueda implacable</h3>
+            <a href="https://youtu.be/DJNq_RWMfk4?t=14" target="_blank">
+                <img src="busqueda.jpg" alt="Búsqueda implacable">
+            </a>
+            <p>Película de acción donde un padre intenta rescatar a su hija secuestrada por narcos.</p>
+            <div class="botones-container">
+                <input type="button" value="Ver reseña">
+                <input type="button" value="Comprar">
+            </div>
+        </div>
+
+        <!-- COMEDIA -->
+        <div class="categoria-section">
+            <h2 id="comedia">Tráiler de comedia</h2>
+        </div>
+        <div class="comedia">
+            <h3>Son como niños</h3>
+            <a href="https://youtu.be/yMEDiKD7cyE?t=8" target="_blank">
+                <img src="niños.jpg" alt="Son como niños">
+            </a>
+            <p>Película de comedia donde unos padres pasan vacaciones con sus hijos en una cabaña.</p>
+            <div class="botones-container">
+                <input type="button" value="Ver reseña">
+                <input type="button" value="Comprar">
+            </div>
+        </div>
+
+        <!-- ROMANCE -->
+        <div class="categoria-section">
+            <h2 id="romance">Tráiler de romance</h2>
+        </div>
+        <div class="romance">
+            <h3>A través de mi ventana</h3>
+            <a href="https://youtu.be/ibjAgqsgQzc" target="_blank">
+                <img src="serie_atraves.jpg" alt="A través de mi ventana">
+            </a>
+            <p>Película romántica juvenil basada en la exitosa novela.</p>
+            <div class="botones-container">
+                <input type="button" value="Ver reseña">
+                <input type="button" value="Comprar">
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <h3>Página web diseñada por Bernal</h3>
+    </footer>
+
+</body>
+</html>
